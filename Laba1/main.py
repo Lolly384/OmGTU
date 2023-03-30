@@ -5,7 +5,7 @@ def parse():
     url = 'https://www.omgtu.ru/general_information/the-structure/the-department-of-university.php'
     page = requests.get(url)
     soup = BeautifulSoup(page.text, "html.parser")
-
+    print(page.status_code)  # смотрим ответ
     cafedry = []
     for caf in soup.select('div#pagecontent > ul > li > a'):
         cafedry.append(caf.text)
