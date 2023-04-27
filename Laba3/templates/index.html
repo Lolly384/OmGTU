@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"></me>
+    <title>Конвертер курсов валют</title>
+</head>
+<body>
+    <h1>Конвертер курсов валют</h1>
+    <form method="POST" action="/convert">
+        <input type="number" name="amount" required>
+        <select name="from_currency" required>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="RUB">RUB</option>
+        </select>
+        <select name="to_currency" required>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="RUB">RUB</option>
+        </select>
+        <button type="submit">Конвертировать</button>
+    </form>
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
